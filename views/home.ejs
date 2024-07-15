@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= name %></title>
+</head>
+  <h1>Home Page</h1>
+  <h1>Welcome to <%= name %></h1>
+  <p>Address: <%= address %></p>
+  <p>Phone: <%= phone %></p>
+  <p>Status: <%= isOpen ? 'Yes we are open!' : ' We are closed' %></p>
+  <h2>Menu</h2>
+  <ul>
+      <% menu.forEach(item => { %>
+          <li>
+              <h3><%= item.name %> - $<%= item.price %></h3>
+              <p>Rating: <%= item.rating %>/5</p>
+              <p>Category: <%= item.category %></p>
+              <p><%= item.details %></p>
+          </li>
+      <% }); %>
+  </ul>
+</body>
+</html>
+
+

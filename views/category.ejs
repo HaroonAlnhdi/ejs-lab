@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Category</title>
+</head>
+<body>
+
+    <h1>Menu Items in Category: <%= menuItems.length > 0 ? menuItems[0].category : 'No items found' %></h1>
+
+
+    <ol>
+        <% menuItems.forEach(item => { %>
+            <li>
+                <h3><%= item.name %></h3>
+                <h4>Price : $<%= item.price %></h4>
+                <p>Rating: <%= item.rating %>/5</p>
+                <p><%= item.details %></p>
+            </li>
+        <% }); %>
+    </ol>
+
+
+</body>
+</html>

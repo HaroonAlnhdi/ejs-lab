@@ -55,13 +55,25 @@ const RESTAURANT = {
 
 
 
-app.get('/', (req, res) => {
-    res.render('home.ejs', RESTAURANT)
-});
+    app.get('/', (req, res) => {
+        res.render('home.ejs', RESTAURANT)
+    });
 
 
-app.get('/menu', (req, res) => {
-    res.render('menu.ejs', RESTAURANT)
-});
+    app.get('/menu', (req, res) => {
+        res.render('menu.ejs', RESTAURANT)
+    });
 
-app.listen(3000);
+
+    //part 3
+    app.get('/menu/:category', (req, res) => {
+
+      const category = req.params.category
+      const menuItems = RESTAURANT.menu.filter(item => item.category === category);
+        res.locals.menuItems = menuItems;
+        res.render('category.ejs')
+    });
+
+    app.listen(3000, () => {
+      console.log('Server is running');
+    });
